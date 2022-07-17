@@ -1,0 +1,145 @@
+/* ///////////////////////////////////////////////////////////// */
+/* //////////////////////// CSS RESET ////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* //////////////////////// END OF CSS RESET /////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+  /* dark colors */
+  --app-color-dark-mode: #161F3C;
+  --container-color-dark-mode: #232E4D;
+  --row-hover-color-dark-mode: #1C253F;
+  --text-color-dark-mode: #fff;
+  --toggle-color-dark-mode: #2196F3;
+
+  /* light colors */
+  --app-color-light-mode: #D7DEE4;
+  --container-color-light-mode: #fff;
+  --row-hover-color-light-mode: #e4eaef;
+  --text-color-light-mode: #333;
+  --border-color-light-mode: #00000029;
+  --toggle-color-light-mode: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* initial light mode */
+body {
+  --app-color: var(--app-color-light-mode);
+  --container-color: var(--container-color-light-mode);
+  --row-hover-color: var(--row-hover-color-light-mode);
+  --text-color: var(--text-color-light-mode);
+  --border-color: var(--border-color-light-mode);
+  --toggle-color: var(--toggle-color-light-mode);
+}
+
+/* dark mode class to override the OS preference */
+body.dark-mode {
+  --app-color: var(--app-color-dark-mode);
+  --container-color: var(--container-color-dark-mode);
+  --row-hover-color: var(--row-hover-color-dark-mode);
+  --text-color: var(--text-color-dark-mode);
+  --toggle-color: var(--toggle-color-dark-mode);
+}
+
+/* for inital page load */
+@media (prefers-color-scheme: dark) {
+  /* initial dark mode */
+  body {
+    --app-color: var(--app-color-dark-mode);
+    --container-color: var(--container-color-dark-mode);
+    --row-hover-color: var(--row-hover-color-dark-mode);
+    --text-color: var(--text-color-dark-mode);
+    --toggle-color: var(--toggle-color-dark-mode);
+  }
+
+  /* light mode class to override the OS preference */
+  body.light-mode {
+    --app-color: var(--app-color-light-mode);
+    --container-color: var(--container-color-light-mode);
+    --row-hover-color: var(--row-hover-color-light-mode);
+    --text-color: var(--text-color-light-mode);
+    --border-color: var(--border-color-light-mode);
+    --toggle-color: var(--toggle-color-light-mode);
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  background-color: var(--app-color);
+  color: var(--text-color);
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: #9f67f9;
+}
