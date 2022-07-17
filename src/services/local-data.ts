@@ -10,7 +10,8 @@ export const getUserLocalData = () => {
   const defaultData = {
     breachesList: [],
     selectedBreach: '',
-    showDarkMode: false
+    showDarkMode: false,
+    totalBreaches: 0
   };
 
   return defaultData;

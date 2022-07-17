@@ -8,7 +8,7 @@ import useEffectOnce from './hooks/use-effect-once';
 
 const App: FC = () => {
   const [breachListData, setBreachListData] = useState<BreachData[]>(getUserLocalData()?.breachesList || []);
-  const [maxBreachSize, setMaxBreachSize] = useState<number>(0);
+  const [maxBreachSize, setMaxBreachSize] = useState<number>(getUserLocalData()?.totalBreaches);
 
   const loadData = async (offset: number) => {
     const apiUrl: string = 'https://hiring.guardio.dev/fe/breaches';
@@ -21,6 +21,10 @@ const App: FC = () => {
     // set the max breach list size, if the value is different from the current max value 
     if (total !== maxBreachSize) {
       setMaxBreachSize(total);
+      // save 
+      setUserLocalData({
+        totalBreaches: total
+      });
     }
 
     // update breachListData
